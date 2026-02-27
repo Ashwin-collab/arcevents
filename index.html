@@ -9,6 +9,7 @@
 :root{
   --blue:#1d4ed8;--blue-mid:#2563eb;--blue-light:#eff6ff;--blue-border:#bfdbfe;
   --green:#15803d;--green-mid:#16a34a;--green-light:#f0fdf4;--green-border:#bbf7d0;
+  --gold:#b45309;--gold-light:#fffbeb;--gold-border:#fde68a;
   --ink:#0f1729;--body:#374151;--muted:#6b7280;--border:#e5e7eb;--bg:#f8fafc;--card:#ffffff;
   --radius:14px;--shadow:0 4px 24px rgba(29,78,216,.08);--shadow-hover:0 12px 40px rgba(29,78,216,.16);
 }
@@ -18,7 +19,6 @@ nav{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.94);backdrop
 .nav-back{display:none;align-items:center;gap:8px;background:var(--blue-light);border:1px solid var(--blue-border);color:var(--blue);padding:7px 14px;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;transition:.2s;font-family:'DM Sans',sans-serif}
 .nav-back:hover{background:var(--blue-border)}.nav-back.visible{display:flex}
 .nav-logo{display:flex;align-items:center;gap:10px}
-.nav-logo img{width:40px;height:40px;border-radius:50%;object-fit:cover;border:2px solid var(--blue-border)}
 .nav-logo-text{font-family:'Syne',sans-serif;font-weight:800;font-size:18px;color:var(--ink);letter-spacing:-0.3px}
 .nav-logo-text span{color:var(--green-mid)}
 .nav-links{display:flex;gap:4px;list-style:none}
@@ -29,7 +29,6 @@ nav{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.94);backdrop
 .hero{background:linear-gradient(135deg,#eff6ff 0%,#f0fdf4 60%,#eff6ff 100%);padding:80px 24px 72px;text-align:center;position:relative;overflow:hidden;animation:fadeUp .7s ease both}
 .hero::before{content:'';position:absolute;top:-80px;right:-80px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,.07),transparent 70%);pointer-events:none}
 .hero::after{content:'';position:absolute;bottom:-60px;left:-60px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(22,163,74,.06),transparent 70%);pointer-events:none}
-.hero-logo{width:96px;height:96px;border-radius:50%;object-fit:cover;margin-bottom:22px;box-shadow:0 0 0 6px rgba(29,78,216,.1),0 8px 30px rgba(29,78,216,.15);animation:fadeUp .6s .1s ease both}
 .hero h1{font-family:'Syne',sans-serif;font-size:clamp(28px,5vw,52px);font-weight:800;letter-spacing:-1.5px;color:var(--ink);line-height:1.1;animation:fadeUp .6s .15s ease both}
 .hero h1 em{font-style:normal;color:var(--blue)}
 .hero p{margin:16px auto 34px;max-width:480px;color:var(--muted);font-size:15px;line-height:1.7;animation:fadeUp .6s .2s ease both}
@@ -60,18 +59,30 @@ nav{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.94);backdrop
 .pill:hover{border-color:var(--blue);color:var(--blue);background:var(--blue-light)}
 .pill.sel-blue{background:var(--blue-light);border-color:var(--blue);color:var(--blue);font-weight:600}
 .pill.sel-green{background:var(--green-light);border-color:var(--green-mid);color:var(--green);font-weight:600}
+.pill.sel-gold{background:var(--gold-light);border-color:var(--gold-border);color:var(--gold);font-weight:600}
 .btn-submit{width:100%;padding:15px;background:var(--blue);color:#fff;border:none;border-radius:10px;font-size:15px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;transition:.25s;box-shadow:0 6px 20px rgba(29,78,216,.2);margin-top:24px}
 .btn-submit:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(29,78,216,.3)}.btn-submit:disabled{opacity:.55;pointer-events:none;transform:none}
 .forum-header{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:14px;margin-bottom:28px}
 .forum-header h2{font-family:'Syne',sans-serif;font-size:24px;font-weight:800;color:var(--ink)}
 .forum-header p{color:var(--muted);font-size:13px;margin-top:3px}
-.forum-search{background:#fff;border:1.5px solid var(--border);border-radius:10px;padding:10px 16px;font-family:'DM Sans',sans-serif;font-size:14px;color:var(--ink);outline:none;width:220px;transition:.2s}
+.forum-controls{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.forum-search{background:#fff;border:1.5px solid var(--border);border-radius:10px;padding:10px 16px;font-family:'DM Sans',sans-serif;font-size:14px;color:var(--ink);outline:none;width:200px;transition:.2s}
 .forum-search:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(29,78,216,.1)}
+.btn-track{padding:10px 18px;background:linear-gradient(135deg,#7c3aed,#4f46e5);color:#fff;border:none;border-radius:10px;font-size:13px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;transition:.25s;display:flex;align-items:center;gap:7px;box-shadow:0 4px 14px rgba(124,58,237,.25)}
+.btn-track:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(124,58,237,.35)}
+.btn-refresh{padding:10px 16px;background:#fff;border:1.5px solid var(--border);border-radius:10px;font-size:13px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;transition:.25s;display:flex;align-items:center;gap:6px;color:var(--muted)}
+.btn-refresh:hover{border-color:var(--blue);color:var(--blue);background:var(--blue-light)}
+.btn-refresh.spinning svg{animation:spin .7s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
 .events-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px}
 .event-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;transition:.3s;animation:cardIn .4s ease both}
 .event-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-hover)}
-.event-card-top{background:linear-gradient(135deg,var(--blue) 0%,#1e40af 100%);padding:22px 20px 18px;position:relative;overflow:hidden}
+.event-card-top{padding:22px 20px 18px;position:relative;overflow:hidden}
+.event-card-top.won-card{background:linear-gradient(135deg,#b45309 0%,#92400e 100%)}
+.event-card-top.participated-card{background:linear-gradient(135deg,var(--blue) 0%,#1e40af 100%)}
+.event-card-top.no-status-card{background:linear-gradient(135deg,var(--blue) 0%,#1e40af 100%)}
 .event-card-top::after{content:'✈';position:absolute;right:-8px;top:-6px;font-size:64px;opacity:.08;transform:rotate(15deg);line-height:1;pointer-events:none}
+.event-card-top.won-card::after{content:'🏆'}
 .event-date{font-size:11px;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.8px;margin-bottom:7px}
 .event-card-top h3{font-family:'Syne',sans-serif;font-size:17px;font-weight:700;color:#fff;line-height:1.3}
 .event-card-body{padding:18px 20px}
@@ -83,8 +94,48 @@ nav{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.94);backdrop
 .chip-blue{background:var(--blue-light);color:var(--blue);border:1px solid var(--blue-border)}
 .chip-green{background:var(--green-light);color:var(--green);border:1px solid var(--green-border)}
 .chip-gold{background:#fffbeb;color:#b45309;border:1px solid #fde68a}
+.chip-won{background:#fffbeb;color:#b45309;border:1px solid #fde68a;font-weight:700}
+.chip-participated{background:var(--blue-light);color:var(--blue);border:1px solid var(--blue-border);font-weight:700}
 .empty-state{grid-column:1/-1;text-align:center;padding:64px 20px;color:var(--muted)}
 .empty-state svg{width:48px;height:48px;opacity:.25;margin-bottom:14px;display:block;margin-left:auto;margin-right:auto}
+/* Loading skeleton */
+.skeleton{background:linear-gradient(90deg,#f0f0f0 25%,#e0e0e0 50%,#f0f0f0 75%);background-size:200% 100%;animation:shimmer 1.4s infinite;border-radius:8px}
+@keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
+.skel-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
+.skel-top{height:88px}.skel-body{padding:18px 20px;display:flex;flex-direction:column;gap:10px}
+.skel-line{height:12px}.skel-line.short{width:60%}.skel-line.med{width:80%}
+/* Modal */
+.modal-overlay{position:fixed;inset:0;background:rgba(15,23,41,.55);backdrop-filter:blur(4px);z-index:2000;display:none;align-items:center;justify-content:center;padding:20px}
+.modal-overlay.open{display:flex;animation:fadeUp .25s ease}
+.modal{background:#fff;border-radius:20px;box-shadow:0 24px 80px rgba(15,23,41,.25);width:100%;max-width:440px;overflow:hidden}
+.modal-head{padding:28px 28px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+.modal-head h3{font-family:'Syne',sans-serif;font-size:20px;font-weight:800;color:var(--ink)}
+.modal-close{width:32px;height:32px;border-radius:50%;border:1px solid var(--border);background:#f9fafb;color:var(--muted);cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;transition:.2s}
+.modal-close:hover{background:var(--border);color:var(--ink)}
+.modal-body{padding:28px}
+.track-kpi-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:24px}
+.track-kpi{border-radius:14px;padding:18px 14px;text-align:center}
+.track-kpi.total{background:var(--blue-light);border:1px solid var(--blue-border)}
+.track-kpi.won{background:var(--gold-light);border:1px solid var(--gold-border)}
+.track-kpi.participated{background:var(--green-light);border:1px solid var(--green-border)}
+.track-kpi-num{font-family:'Syne',sans-serif;font-size:30px;font-weight:800}
+.track-kpi.total .track-kpi-num{color:var(--blue)}
+.track-kpi.won .track-kpi-num{color:var(--gold)}
+.track-kpi.participated .track-kpi-num{color:var(--green)}
+.track-kpi-lbl{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.7px;margin-top:3px}
+.track-kpi.total .track-kpi-lbl{color:var(--blue);opacity:.75}
+.track-kpi.won .track-kpi-lbl{color:var(--gold);opacity:.85}
+.track-kpi.participated .track-kpi-lbl{color:var(--green);opacity:.85}
+.track-bar-wrap{margin-bottom:22px}
+.track-bar-label{display:flex;justify-content:space-between;font-size:12px;font-weight:600;margin-bottom:6px}
+.track-bar-bg{height:12px;border-radius:100px;background:#f3f4f6;overflow:hidden}
+.track-bar-fill{height:100%;border-radius:100px;transition:width .8s cubic-bezier(.4,0,.2,1)}
+.track-bar-fill.won-fill{background:linear-gradient(90deg,#f59e0b,#b45309)}
+.track-bar-fill.part-fill{background:linear-gradient(90deg,#3b82f6,#1d4ed8)}
+.track-win-rate{text-align:center;padding:16px;background:linear-gradient(135deg,#fffbeb,#f0fdf4);border-radius:12px;border:1px solid var(--gold-border)}
+.track-win-rate-num{font-family:'Syne',sans-serif;font-size:36px;font-weight:800;color:var(--gold)}
+.track-win-rate-lbl{font-size:12px;color:var(--muted);margin-top:2px}
+/* Admin */
 .login-wrap{max-width:380px;margin:0 auto}.login-wrap .card{padding:36px}
 .login-wrap h2{font-family:'Syne',sans-serif;font-size:22px;font-weight:700;color:var(--ink);margin-bottom:4px}
 .login-wrap .sub{color:var(--muted);font-size:13px;margin-bottom:24px}
@@ -117,6 +168,7 @@ table tr:last-child td{border-bottom:none}table tr:hover td{background:#fafbff}
 .abtn{padding:5px 12px;border-radius:7px;font-size:11px;font-weight:600;cursor:pointer;border:none;transition:.15s;font-family:'DM Sans',sans-serif;margin-right:4px}
 .ab-approve{background:var(--green-light);color:var(--green);border:1px solid var(--green-border)}.ab-approve:hover{background:var(--green-border)}
 .ab-reject{background:#fef2f2;color:#b91c1c;border:1px solid #fecaca}.ab-reject:hover{background:#fecaca}
+.abtn:disabled{opacity:.4;pointer-events:none}
 .logout-btn{padding:8px 16px;border-radius:8px;border:1px solid var(--border);background:#fff;color:var(--muted);font-size:12px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif}
 .toast{position:fixed;bottom:20px;right:20px;background:#fff;border:1px solid var(--border);border-left:4px solid var(--green-mid);color:var(--ink);padding:13px 18px;border-radius:10px;font-size:13px;font-weight:500;opacity:0;transform:translateY(12px);transition:.3s;z-index:9999;box-shadow:0 8px 28px rgba(0,0,0,.1);max-width:300px}
 .toast.show{opacity:1;transform:translateY(0)}.toast.err{border-left-color:#ef4444}
@@ -131,7 +183,6 @@ table tr:last-child td{border-bottom:none}table tr:hover td{background:#fafbff}
     Back
   </button>
   <div class="nav-logo">
-    <img id="navLogo" alt="ARC KPRIET">
     <div class="nav-logo-text">ARC <span>KPRIET</span></div>
   </div>
   <ul class="nav-links">
@@ -145,7 +196,6 @@ table tr:last-child td{border-bottom:none}table tr:hover td{background:#fafbff}
 <!-- HOME -->
 <section id="home">
   <div class="hero">
-    <img class="hero-logo" id="heroLogo" alt="ARC KPRIET">
     <h1>ARC <em>KPRIET</em><br>Event Platform</h1>
     <p>Submit your event participations, explore the community forum, and let admins celebrate your achievements.</p>
     <div class="hero-cta">
@@ -155,10 +205,10 @@ table tr:last-child td{border-bottom:none}table tr:hover td{background:#fafbff}
     </div>
   </div>
   <div class="stats-bar">
-    <div class="stat-item"><div class="stat-num" id="heroTotal">0</div><div class="stat-label">Total Entries</div></div>
-    <div class="stat-item"><div class="stat-num" id="heroApproved">0</div><div class="stat-label">Approved</div></div>
-    <div class="stat-item"><div class="stat-num">5★</div><div class="stat-label">Rating Scale</div></div>
-    <div class="stat-item"><div class="stat-num" id="heroDepts">0</div><div class="stat-label">Departments</div></div>
+    <div class="stat-item"><div class="stat-num" id="heroTotal">—</div><div class="stat-label">Total Entries</div></div>
+    <div class="stat-item"><div class="stat-num" id="heroApproved">—</div><div class="stat-label">Approved</div></div>
+    <div class="stat-item"><div class="stat-num" id="heroWon">—</div><div class="stat-label">Won</div></div>
+    <div class="stat-item"><div class="stat-num" id="heroDepts">—</div><div class="stat-label">Departments</div></div>
   </div>
 </section>
 
@@ -166,8 +216,18 @@ table tr:last-child td{border-bottom:none}table tr:hover td{background:#fafbff}
 <section id="forum" style="display:none">
   <div class="container">
     <div class="forum-header">
-      <div><h2>Events Forum</h2><p>Celebrating ARC KPRIET achievements(developed by ASHWIN K)</p></div>
-      <input class="forum-search" id="forumSearch" placeholder="Search events…" oninput="renderForum()">
+      <div><h2>Events Forum</h2><p>Celebrating ARC KPRIET achievements (developed by ASHWIN K)</p></div>
+      <div class="forum-controls">
+        <input class="forum-search" id="forumSearch" placeholder="Search events…" oninput="renderForum()">
+        <button class="btn-refresh" id="refreshBtn" onclick="loadEntries(true)">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 8a6 6 0 1 0 1.5-3.9"/><path d="M2 4v4h4"/></svg>
+          Refresh
+        </button>
+        <button class="btn-track" onclick="openTrackRecord()">
+          <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 1l1.5 4.5H14l-3.5 2.5 1.5 4.5L8 10l-4 2.5 1.5-4.5L2 5.5h4.5z"/></svg>
+          Track Record
+        </button>
+      </div>
     </div>
     <div class="events-grid" id="eventsGrid"></div>
   </div>
@@ -197,7 +257,15 @@ table tr:last-child td{border-bottom:none}table tr:hover td{background:#fafbff}
         <div class="field"><label>Venue</label><input id="f_venue" placeholder="e.g. Coimbatore"></div>
         <div class="field"><label>Host Institution</label><input id="f_institution" placeholder="e.g. KPRIET"></div>
         <div class="field full"><label>Description</label><textarea id="f_desc" placeholder="Describe the event, your role, and any achievements…"></textarea></div>
-        <div class="form-section-label">Your Feedback</div>
+        <div class="form-section-label">Event Outcome & Feedback</div>
+        <div class="field full">
+          <label>Event Status</label>
+          <div class="pill-group" id="pg_eventStatus">
+            <button class="pill" onclick="setPill('eventStatus','Won',this)">🏆 Won</button>
+            <button class="pill" onclick="setPill('eventStatus','Participated',this)">🎫 Participated</button>
+          </div>
+          <input type="hidden" id="f_eventStatus">
+        </div>
         <div class="field full">
           <label>Rating (out of 5)</label>
           <div class="pill-group" id="pg_rating">
@@ -243,13 +311,19 @@ table tr:last-child td{border-bottom:none}table tr:hover td{background:#fafbff}
       <div class="card">
         <div class="dash-top">
           <div><div class="section-title">Admin Dashboard</div><div class="section-sub" style="margin:0">Review and approve student event entries</div></div>
-          <button class="logout-btn" onclick="adminLogout()">Logout</button>
+          <div style="display:flex;gap:8px">
+            <button class="fbtn" onclick="loadEntries(true)" style="display:flex;align-items:center;gap:6px">
+              <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 8a6 6 0 1 0 1.5-3.9"/><path d="M2 4v4h4"/></svg>
+              Refresh
+            </button>
+            <button class="logout-btn" onclick="adminLogout()">Logout</button>
+          </div>
         </div>
         <div class="kpi-row">
-          <div class="kpi"><div class="kpi-num" id="kpiTotal">0</div><div class="kpi-lbl">Total</div></div>
-          <div class="kpi g"><div class="kpi-num" id="kpiApproved">0</div><div class="kpi-lbl">Approved</div></div>
-          <div class="kpi"><div class="kpi-num" id="kpiPending">0</div><div class="kpi-lbl">Pending</div></div>
-          <div class="kpi"><div class="kpi-num" id="kpiRejected">0</div><div class="kpi-lbl">Rejected</div></div>
+          <div class="kpi"><div class="kpi-num" id="kpiTotal">—</div><div class="kpi-lbl">Total</div></div>
+          <div class="kpi g"><div class="kpi-num" id="kpiApproved">—</div><div class="kpi-lbl">Approved</div></div>
+          <div class="kpi"><div class="kpi-num" id="kpiPending">—</div><div class="kpi-lbl">Pending</div></div>
+          <div class="kpi"><div class="kpi-num" id="kpiRejected">—</div><div class="kpi-lbl">Rejected</div></div>
         </div>
         <div class="dash-toolbar">
           <input class="dash-search" id="dashSearch" placeholder="Search…" oninput="renderDash()">
@@ -265,213 +339,371 @@ table tr:last-child td{border-bottom:none}table tr:hover td{background:#fafbff}
   </div>
 </section>
 
+<!-- TRACK RECORD MODAL -->
+<div class="modal-overlay" id="trackModal" onclick="handleModalClick(event)">
+  <div class="modal">
+    <div class="modal-head">
+      <h3>🏆 Track Record</h3>
+      <button class="modal-close" onclick="closeTrackRecord()">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="track-kpi-row">
+        <div class="track-kpi total"><div class="track-kpi-num" id="trTotal">0</div><div class="track-kpi-lbl">Total</div></div>
+        <div class="track-kpi won"><div class="track-kpi-num" id="trWon">0</div><div class="track-kpi-lbl">Won</div></div>
+        <div class="track-kpi participated"><div class="track-kpi-num" id="trPart">0</div><div class="track-kpi-lbl">Participated</div></div>
+      </div>
+      <div class="track-bar-wrap">
+        <div class="track-bar-label">
+          <span style="color:var(--gold);font-weight:600">🏆 Won</span>
+          <span id="trWonPct" style="color:var(--gold)">0%</span>
+        </div>
+        <div class="track-bar-bg"><div class="track-bar-fill won-fill" id="trWonBar" style="width:0%"></div></div>
+      </div>
+      <div class="track-bar-wrap">
+        <div class="track-bar-label">
+          <span style="color:var(--blue);font-weight:600">🎫 Participated</span>
+          <span id="trPartPct" style="color:var(--blue)">0%</span>
+        </div>
+        <div class="track-bar-bg"><div class="track-bar-fill part-fill" id="trPartBar" style="width:0%"></div></div>
+      </div>
+      <div class="track-win-rate">
+        <div class="track-win-rate-num" id="trWinRate">0%</div>
+        <div class="track-win-rate-lbl">Overall Win Rate (from approved entries)</div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="toast" id="toast"></div>
 
 <script>
-const ARC_LOGO='data:image/jpeg;base64,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';
-const WEBAPP_URL="https://script.google.com/macros/s/AKfycbzu_mURB6ssbtrBXmuxWlBTk4XUKGP0kKCq58uL4p9JjhPmAR3C16xMZicCu_ydN42pKA/exec";
-let entries=[],adminFilter='all',navHistory=[];
+// ── IMPORTANT: Replace with your deployed Web App URL ──────────────────────
+const WEBAPP_URL = "https://script.google.com/macros/s/AKfycbyDRZMq6vMFkEVKQrcJzDU7o5mPhe7Ctll47WIkGwVnpP0K95X4b23ie0vae6fP7_551w/exec";
+// ───────────────────────────────────────────────────────────────────────────
 
-window.addEventListener('load',()=>{
-  document.getElementById('navLogo').src=ARC_LOGO;
-  document.getElementById('heroLogo').src=ARC_LOGO;
+let entries = [], adminFilter = 'all', navHistory = [], isLoggedIn = false;
 
-  // Restore cached fields: name, email, dept, year
-  const cache={f_name:'name',f_email:'email',f_dept:'department',f_year:'year'};
-  Object.entries(cache).forEach(([elId,key])=>{
-    const v=localStorage.getItem('arc_'+key);
-    if(v){
-      const el=document.getElementById(elId);
-      if(el) el.value=v;
-    }
+// ── INIT ────────────────────────────────────────────────────────────────────
+window.addEventListener('load', () => {
+  // Restore cached profile fields
+  ['f_name','f_email','f_dept','f_year'].forEach(id => {
+    const key = {f_name:'name',f_email:'email',f_dept:'department',f_year:'year'}[id];
+    const v = localStorage.getItem('arc_' + key);
+    if (v) { const el = document.getElementById(id); if (el) el.value = v; }
   });
-
-  entries=JSON.parse(localStorage.getItem('arcEntries')||'[]');
-  updateStats();renderForum();
+  loadEntries();
 });
 
-function toast(msg,isErr=false){
-  const t=document.getElementById('toast');
-  t.textContent=msg;t.className='toast show'+(isErr?' err':'');
-  setTimeout(()=>t.classList.remove('show'),3000);
-}
-
-function showPage(id,el){
-  const cur=[...document.querySelectorAll('section')].find(s=>s.style.display!=='none');
-  if(cur&&cur.id!==id)navHistory.push(cur.id);
-  document.querySelectorAll('section').forEach(s=>s.style.display='none');
-  document.getElementById(id).style.display='block';
-  document.querySelectorAll('.nav-links li').forEach(l=>l.classList.remove('active'));
-  if(el){el.classList.add('active');}else{
-    document.querySelectorAll('.nav-links li').forEach(l=>{
-      if((l.getAttribute('onclick')||'').includes("'"+id+"'"))l.classList.add('active');
-    });
+// ── FETCH ENTRIES FROM GOOGLE SHEETS (GET — no CORS issues) ────────────────
+async function loadEntries(showToast = false) {
+  setRefreshSpinning(true);
+  try {
+    const res  = await fetch(WEBAPP_URL + '?action=getEntries');
+    const json = await res.json();
+    if (json.success) {
+      entries = json.entries || [];
+      updateStats();
+      renderForum();
+      renderDash();
+      if (showToast) toast('Data refreshed from Google Sheets ✓');
+    } else {
+      toast('Failed to load: ' + (json.error || 'Unknown error'), true);
+    }
+  } catch (err) {
+    toast('Could not reach Google Sheets. Check WEBAPP_URL.', true);
   }
-  const back=document.getElementById('navBack');
-  if(id==='home'){navHistory=[];back.classList.remove('visible');}
-  else back.classList.add('visible');
-  window.scrollTo({top:0,behavior:'smooth'});
+  setRefreshSpinning(false);
 }
 
-function goBack(){const prev=navHistory.pop()||'home';showPage(prev);}
-
-function setPill(type,val,el){
-  const hid=type==='rating'?'f_rating':'f_experience';
-  document.getElementById(hid).value=val;
-  const grp=type==='rating'?'pg_rating':'pg_exp';
-  document.getElementById(grp).querySelectorAll('.pill').forEach(p=>p.className='pill');
-  el.classList.add(type==='rating'?'sel-blue':'sel-green');
+function setRefreshSpinning(on) {
+  document.getElementById('refreshBtn')?.classList.toggle('spinning', on);
 }
 
-function submitEntry(){
-  const btn=document.getElementById('submitBtn');
-  const get=id=>document.getElementById(id).value.trim();
-  const data={
-    name:get('f_name'),email:get('f_email'),
-    department:get('f_dept'),year:document.getElementById('f_year').value,
-    eventName:get('f_eventName'),date:get('f_date'),
-    venue:get('f_venue'),institution:get('f_institution'),
-    description:get('f_desc'),
-    rating:document.getElementById('f_rating').value,
-    experience:document.getElementById('f_experience').value,
-    status:'Pending',
-    timestamp:new Date().toLocaleString('en-IN')
+// ── SUBMIT TO GOOGLE SHEETS (GET with encoded data — bypasses CORS) ─────────
+async function submitEntry() {
+  const btn = document.getElementById('submitBtn');
+  const get = id => document.getElementById(id).value.trim();
+  const data = {
+    name:        get('f_name'),
+    email:       get('f_email'),
+    department:  get('f_dept'),
+    year:        document.getElementById('f_year').value,
+    eventName:   get('f_eventName'),
+    date:        get('f_date'),
+    venue:       get('f_venue'),
+    institution: get('f_institution'),
+    description: get('f_desc'),
+    eventStatus: document.getElementById('f_eventStatus').value,
+    rating:      document.getElementById('f_rating').value,
+    experience:  document.getElementById('f_experience').value,
+    timestamp:   new Date().toLocaleString('en-IN')
   };
-  if(!data.name||!data.email||!data.eventName){toast('Please fill Name, Email and Event Name.',true);return;}
-  btn.disabled=true;btn.textContent='Submitting…';
 
-  // Cache all profile fields
-  localStorage.setItem('arc_name',data.name);
-  localStorage.setItem('arc_email',data.email);
-  localStorage.setItem('arc_department',data.department);
-  localStorage.setItem('arc_year',data.year);
+  if (!data.name || !data.email || !data.eventName) {
+    toast('Please fill Name, Email and Event Name.', true); return;
+  }
 
-  entries.push(data);
-  localStorage.setItem('arcEntries',JSON.stringify(entries));
-  updateStats();renderDash();
+  btn.disabled = true;
+  btn.textContent = 'Submitting…';
 
-  fetch(WEBAPP_URL,{method:'POST',body:JSON.stringify(data)})
-    .then(()=>toast('Submitted! Awaiting admin approval ✓'))
-    .catch(()=>toast('Saved locally! Awaiting admin approval ✓'));
+  // Cache profile
+  localStorage.setItem('arc_name', data.name);
+  localStorage.setItem('arc_email', data.email);
+  localStorage.setItem('arc_department', data.department);
+  localStorage.setItem('arc_year', data.year);
 
-  setTimeout(()=>{btn.disabled=false;btn.textContent='Submit Entry →';},1000);
+  try {
+    const encoded = encodeURIComponent(JSON.stringify(data));
+    const res     = await fetch(WEBAPP_URL + '?action=submit&data=' + encoded);
+    const json    = await res.json();
+    if (json.success) {
+      toast('Submitted! Awaiting admin approval ✓');
+      await loadEntries();
+    } else {
+      toast('Submission failed: ' + (json.error || 'Unknown'), true);
+    }
+  } catch (err) {
+    toast('Network error. Please try again.', true);
+  }
+
+  btn.disabled = false;
+  btn.textContent = 'Submit Entry →';
 }
 
-function updateStats(){
-  document.getElementById('heroTotal').textContent=entries.length;
-  document.getElementById('heroApproved').textContent=entries.filter(e=>e.status==='Approved').length;
-  document.getElementById('heroDepts').textContent=new Set(entries.map(e=>e.department).filter(Boolean)).size;
+// ── UPDATE STATUS IN GOOGLE SHEETS (GET with params — bypasses CORS) ────────
+async function approveEntry(id, status, btn1, btn2) {
+  if (btn1) btn1.disabled = true;
+  if (btn2) btn2.disabled = true;
+
+  try {
+    const res  = await fetch(`${WEBAPP_URL}?action=updateStatus&id=${encodeURIComponent(id)}&status=${encodeURIComponent(status)}`);
+    const json = await res.json();
+    if (json.success) {
+      toast('Entry ' + status.toLowerCase() + ' ✓');
+      await loadEntries();
+    } else {
+      toast('Update failed: ' + (json.error || 'Unknown'), true);
+      if (btn1) btn1.disabled = false;
+      if (btn2) btn2.disabled = false;
+    }
+  } catch (err) {
+    toast('Network error. Please try again.', true);
+    if (btn1) btn1.disabled = false;
+    if (btn2) btn2.disabled = false;
+  }
 }
 
-function renderForum(){
-  const q=(document.getElementById('forumSearch')?.value||'').toLowerCase();
-  const approved=entries.filter(e=>e.status==='Approved'&&Object.values(e).join(' ').toLowerCase().includes(q));
-  const grid=document.getElementById('eventsGrid');
-  if(!approved.length){
-    grid.innerHTML=`<div class="empty-state">
+// ── STATS ───────────────────────────────────────────────────────────────────
+function updateStats() {
+  const approved = entries.filter(e => e.status === 'Approved');
+  document.getElementById('heroTotal').textContent    = entries.length;
+  document.getElementById('heroApproved').textContent = approved.length;
+  document.getElementById('heroWon').textContent      = approved.filter(e => e.eventStatus === 'Won').length;
+  document.getElementById('heroDepts').textContent    = new Set(entries.map(e => e.department).filter(Boolean)).size;
+}
+
+// ── FORUM RENDER ────────────────────────────────────────────────────────────
+function renderForum() {
+  const q = (document.getElementById('forumSearch')?.value || '').toLowerCase();
+  const approved = entries.filter(e =>
+    e.status === 'Approved' &&
+    Object.values(e).join(' ').toLowerCase().includes(q)
+  );
+  const grid = document.getElementById('eventsGrid');
+  if (!grid) return;
+
+  if (!approved.length) {
+    grid.innerHTML = `<div class="empty-state">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
       <p style="font-size:15px">No approved events yet.</p>
       <p style="font-size:13px;margin-top:6px">Entries appear here after admin approval.</p>
-    </div>`;return;
+    </div>`; return;
   }
-  const expCls=e=>({Excellent:'chip-green','Very Good':'chip-blue',Good:'chip-blue',Average:'chip-gold',Poor:'chip-gold'}[e]||'chip-gold');
-  grid.innerHTML=approved.map(e=>`
+
+  const expCls = e => ({Excellent:'chip-green','Very Good':'chip-blue',Good:'chip-blue',Average:'chip-gold',Poor:'chip-gold'}[e] || 'chip-gold');
+  grid.innerHTML = approved.map(e => {
+    const isWon = e.eventStatus === 'Won';
+    const topClass = isWon ? 'won-card' : 'participated-card';
+    return `
     <div class="event-card">
-      <div class="event-card-top">
-        <div class="event-date">${e.date||'Date TBA'}${e.institution?' · '+e.institution:''}</div>
-        <h3>${e.eventName||'Event'}</h3>
+      <div class="event-card-top ${topClass}">
+        <div class="event-date">${e.date || 'Date TBA'}${e.institution ? ' · ' + e.institution : ''}</div>
+        <h3>${e.eventName || 'Event'}</h3>
       </div>
       <div class="event-card-body">
         <div class="event-meta">
           <div class="event-meta-row">
             <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="6" r="2.5"/><path d="M2 14c0-3.3 2.7-6 6-6s6 2.7 6 6"/></svg>
-            <span><strong style="color:var(--ink)">${e.name||'—'}</strong>${e.department?' · '+e.department:''}${e.year?' · '+e.year:''}</span>
+            <span><strong style="color:var(--ink)">${e.name || '—'}</strong>${e.department ? ' · ' + e.department : ''}${e.year ? ' · ' + e.year : ''}</span>
           </div>
-          ${e.venue?`<div class="event-meta-row"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 1.5C5.5 1.5 3.5 3.5 3.5 6c0 3.5 4.5 8.5 4.5 8.5S12.5 9.5 12.5 6C12.5 3.5 10.5 1.5 8 1.5zm0 6a1.5 1.5 0 110-3 1.5 1.5 0 010 3z"/></svg><span>${e.venue}</span></div>`:''}
-          ${e.description?`<div class="event-meta-row" style="align-items:flex-start"><svg width="13" height="13" style="margin-top:2px" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 4h12M2 8h8M2 12h10"/></svg><span style="color:var(--muted)">${e.description.substring(0,90)}${e.description.length>90?'…':''}</span></div>`:''}
+          ${e.venue ? `<div class="event-meta-row"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 1.5C5.5 1.5 3.5 3.5 3.5 6c0 3.5 4.5 8.5 4.5 8.5S12.5 9.5 12.5 6C12.5 3.5 10.5 1.5 8 1.5zm0 6a1.5 1.5 0 110-3 1.5 1.5 0 010 3z"/></svg><span>${e.venue}</span></div>` : ''}
+          ${e.description ? `<div class="event-meta-row" style="align-items:flex-start"><svg width="13" height="13" style="margin-top:2px" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 4h12M2 8h8M2 12h10"/></svg><span style="color:var(--muted)">${e.description.substring(0, 90)}${e.description.length > 90 ? '…' : ''}</span></div>` : ''}
         </div>
         <div class="chips">
-          ${e.rating?`<span class="chip chip-gold">${'⭐'.repeat(parseInt(e.rating))} ${e.rating}/5</span>`:''}
-          ${e.experience?`<span class="chip ${expCls(e.experience)}">${e.experience}</span>`:''}
+          ${e.eventStatus ? `<span class="chip ${e.eventStatus === 'Won' ? 'chip-won' : 'chip-participated'}">${e.eventStatus === 'Won' ? '🏆 Won' : '🎫 Participated'}</span>` : ''}
+          ${e.rating ? `<span class="chip chip-gold">${'⭐'.repeat(parseInt(e.rating))} ${e.rating}/5</span>` : ''}
+          ${e.experience ? `<span class="chip ${expCls(e.experience)}">${e.experience}</span>` : ''}
         </div>
       </div>
-    </div>`).join('');
+    </div>`;
+  }).join('');
 }
 
-function adminLogin(){
-  const u=document.getElementById('adminUser').value;
-  const p=document.getElementById('adminPass').value;
-  if((u==='uvira'&&p==='arivu123')||(u==='aervix'&&p==='xavier@ino')){
-    document.getElementById('loginWrap').style.display='none';
-    document.getElementById('dashboard').style.display='block';
-    renderDash();toast('Welcome back, '+u+' ✓');
-  }else toast('Invalid credentials.',true);
+// ── TRACK RECORD MODAL ──────────────────────────────────────────────────────
+function openTrackRecord() {
+  const approved = entries.filter(e => e.status === 'Approved');
+  const won  = approved.filter(e => e.eventStatus === 'Won').length;
+  const part = approved.filter(e => e.eventStatus === 'Participated').length;
+  const total = approved.length;
+  const winRate = total > 0 ? Math.round((won / total) * 100) : 0;
+  const wonPct  = total > 0 ? Math.round((won / total) * 100) : 0;
+  const partPct = total > 0 ? Math.round((part / total) * 100) : 0;
+  document.getElementById('trTotal').textContent = total;
+  document.getElementById('trWon').textContent   = won;
+  document.getElementById('trPart').textContent  = part;
+  document.getElementById('trWinRate').textContent = winRate + '%';
+  document.getElementById('trWonPct').textContent  = wonPct + '%';
+  document.getElementById('trPartPct').textContent = partPct + '%';
+  document.getElementById('trWonBar').style.width  = '0%';
+  document.getElementById('trPartBar').style.width = '0%';
+  document.getElementById('trackModal').classList.add('open');
+  setTimeout(() => {
+    document.getElementById('trWonBar').style.width  = wonPct + '%';
+    document.getElementById('trPartBar').style.width = partPct + '%';
+  }, 80);
+}
+function closeTrackRecord() { document.getElementById('trackModal').classList.remove('open'); }
+function handleModalClick(e) { if (e.target === document.getElementById('trackModal')) closeTrackRecord(); }
+
+// ── ADMIN ────────────────────────────────────────────────────────────────────
+function adminLogin() {
+  const u = document.getElementById('adminUser').value;
+  const p = document.getElementById('adminPass').value;
+  if ((u === 'uvira' && p === 'arivu123') || (u === 'aervix' && p === 'xavier@ino')) {
+    isLoggedIn = true;
+    document.getElementById('loginWrap').style.display  = 'none';
+    document.getElementById('dashboard').style.display  = 'block';
+    loadEntries();
+    toast('Welcome back, ' + u + ' ✓');
+  } else {
+    toast('Invalid credentials.', true);
+  }
 }
 
-function adminLogout(){
-  document.getElementById('loginWrap').style.display='block';
-  document.getElementById('dashboard').style.display='none';
-  document.getElementById('adminUser').value='';
-  document.getElementById('adminPass').value='';
+function adminLogout() {
+  isLoggedIn = false;
+  document.getElementById('loginWrap').style.display  = 'block';
+  document.getElementById('dashboard').style.display  = 'none';
+  document.getElementById('adminUser').value = '';
+  document.getElementById('adminPass').value = '';
 }
 
-function setFilter(f,el){
-  adminFilter=f;
-  document.querySelectorAll('.fbtn').forEach(b=>b.classList.remove('active'));
-  el.classList.add('active');renderDash();
+function setFilter(f, el) {
+  adminFilter = f;
+  document.querySelectorAll('.fbtn').forEach(b => b.classList.remove('active'));
+  el.classList.add('active');
+  renderDash();
 }
 
-function approveEntry(i,status){
-  entries[i].status=status;
-  localStorage.setItem('arcEntries',JSON.stringify(entries));
-  updateStats();renderDash();renderForum();
-  toast('Entry '+status.toLowerCase()+' ✓');
-}
-
-function renderDash(){
-  const q=(document.getElementById('dashSearch')?.value||'').toLowerCase();
-  const filtered=entries.filter(e=>
-    Object.values(e).join(' ').toLowerCase().includes(q)&&
-    (adminFilter==='all'||e.status===adminFilter)
+function renderDash() {
+  if (!isLoggedIn) return;
+  const q = (document.getElementById('dashSearch')?.value || '').toLowerCase();
+  const filtered = entries.filter(e =>
+    Object.values(e).join(' ').toLowerCase().includes(q) &&
+    (adminFilter === 'all' || e.status === adminFilter)
   );
-  const c={t:entries.length,a:0,p:0,r:0};
-  entries.forEach(e=>{if(e.status==='Approved')c.a++;else if(e.status==='Rejected')c.r++;else c.p++;});
-  [['kpiTotal',c.t],['kpiApproved',c.a],['kpiPending',c.p],['kpiRejected',c.r]].forEach(([id,v])=>{
-    const el=document.getElementById(id);if(el)el.textContent=v;
+  const c = { t: entries.length, a: 0, p: 0, r: 0 };
+  entries.forEach(e => {
+    if (e.status === 'Approved') c.a++;
+    else if (e.status === 'Rejected') c.r++;
+    else c.p++;
   });
-  const sBadge=s=>`<span class="sbadge ${s==='Approved'?'sa':s==='Rejected'?'sr':'sp'}">${s||'Pending'}</span>`;
-  let html=`<tr><th>Student</th><th>Event</th><th>Date</th><th>Rating</th><th>Experience</th><th>Status</th><th>Actions</th></tr>`;
-  if(!filtered.length)html+=`<tr><td colspan="7" style="text-align:center;padding:32px;color:var(--muted)">No entries found.</td></tr>`;
-  filtered.forEach(e=>{
-    const i=entries.indexOf(e);
-    html+=`<tr>
-      <td><strong style="color:var(--ink)">${e.name||'—'}</strong><div style="font-size:11px;color:var(--muted)">${e.department||''} · ${e.year||''}</div></td>
-      <td>${e.eventName||'—'}<div style="font-size:11px;color:var(--muted)">${e.institution||''}</div></td>
-      <td>${e.date||'—'}</td>
-      <td>${e.rating?'⭐'.repeat(parseInt(e.rating))+' '+e.rating:'—'}</td>
-      <td>${e.experience||'—'}</td>
+  [['kpiTotal',c.t],['kpiApproved',c.a],['kpiPending',c.p],['kpiRejected',c.r]].forEach(([id, v]) => {
+    const el = document.getElementById(id); if (el) el.textContent = v;
+  });
+
+  const sBadge = s => `<span class="sbadge ${s === 'Approved' ? 'sa' : s === 'Rejected' ? 'sr' : 'sp'}">${s || 'Pending'}</span>`;
+  const esBadge = s => s
+    ? `<span class="sbadge ${s === 'Won' ? 'sa' : 'sp'}">${s === 'Won' ? '🏆 Won' : '🎫 Participated'}</span>`
+    : '<span style="color:var(--muted);font-size:12px">—</span>';
+
+  let html = `<tr><th>Student</th><th>Event</th><th>Date</th><th>Outcome</th><th>Rating</th><th>Status</th><th>Actions</th></tr>`;
+  if (!filtered.length) {
+    html += `<tr><td colspan="7" style="text-align:center;padding:32px;color:var(--muted)">No entries found.</td></tr>`;
+  }
+  filtered.forEach(e => {
+    html += `<tr>
+      <td><strong style="color:var(--ink)">${e.name || '—'}</strong><div style="font-size:11px;color:var(--muted)">${e.department || ''} · ${e.year || ''}</div></td>
+      <td>${e.eventName || '—'}<div style="font-size:11px;color:var(--muted)">${e.institution || ''}</div></td>
+      <td>${e.date || '—'}</td>
+      <td>${esBadge(e.eventStatus)}</td>
+      <td>${e.rating ? '⭐'.repeat(parseInt(e.rating)) + ' ' + e.rating : '—'}</td>
       <td>${sBadge(e.status)}</td>
       <td>
-        ${e.status!=='Approved'?`<button class="abtn ab-approve" onclick="approveEntry(${i},'Approved')">✓ Approve</button>`:''}
-        ${e.status!=='Rejected'?`<button class="abtn ab-reject" onclick="approveEntry(${i},'Rejected')">✗ Reject</button>`:''}
+        ${e.status !== 'Approved'
+          ? `<button class="abtn ab-approve" onclick="approveEntry('${e.id}','Approved',this)">✓ Approve</button>`
+          : ''}
+        ${e.status !== 'Rejected'
+          ? `<button class="abtn ab-reject" onclick="approveEntry('${e.id}','Rejected',this)">✗ Reject</button>`
+          : ''}
       </td>
     </tr>`;
   });
-  const tbl=document.getElementById('dashTable');if(tbl)tbl.innerHTML=html;
+  const tbl = document.getElementById('dashTable');
+  if (tbl) tbl.innerHTML = html;
 }
 
-function downloadCSV(){
-  const cols=['Name','Email','Department','Year','Event Name','Date','Venue','Institution','Rating','Experience','Description','Status','Timestamp'];
-  let csv=cols.join(',')+'\n';
-  entries.forEach(e=>{
-    csv+=[e.name,e.email,e.department,e.year,e.eventName,e.date,e.venue,e.institution,
-      e.rating||'',e.experience||'',e.description||'',e.status||'Pending',e.timestamp||'']
-      .map(v=>'"'+(v||'').replace(/"/g,'""')+'"').join(',')+'\n';
+// ── CSV EXPORT ───────────────────────────────────────────────────────────────
+function downloadCSV() {
+  const cols = ['ID','Name','Email','Department','Year','Event Name','Date','Venue','Institution','Event Status','Rating','Experience','Description','Status','Timestamp'];
+  let csv = cols.join(',') + '\n';
+  entries.forEach(e => {
+    csv += [e.id,e.name,e.email,e.department,e.year,e.eventName,e.date,e.venue,e.institution,
+      e.eventStatus||'',e.rating||'',e.experience||'',e.description||'',e.status||'Pending',e.timestamp||'']
+      .map(v => '"' + (v || '').replace(/"/g, '""') + '"').join(',') + '\n';
   });
-  const a=document.createElement('a');
-  a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv'}));
-  a.download='ARC_KPRIET_Entries.csv';a.click();
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob([csv], { type: 'text/csv' }));
+  a.download = 'ARC_KPRIET_Entries.csv';
+  a.click();
   toast('CSV exported ✓');
+}
+
+// ── HELPERS ──────────────────────────────────────────────────────────────────
+function toast(msg, isErr = false) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.className = 'toast show' + (isErr ? ' err' : '');
+  setTimeout(() => t.classList.remove('show'), 3000);
+}
+
+function showPage(id, el) {
+  const cur = [...document.querySelectorAll('section')].find(s => s.style.display !== 'none');
+  if (cur && cur.id !== id) navHistory.push(cur.id);
+  document.querySelectorAll('section').forEach(s => s.style.display = 'none');
+  document.getElementById(id).style.display = 'block';
+  document.querySelectorAll('.nav-links li').forEach(l => l.classList.remove('active'));
+  if (el) { el.classList.add('active'); } else {
+    document.querySelectorAll('.nav-links li').forEach(l => {
+      if ((l.getAttribute('onclick') || '').includes("'" + id + "'")) l.classList.add('active');
+    });
+  }
+  const back = document.getElementById('navBack');
+  if (id === 'home') { navHistory = []; back.classList.remove('visible'); }
+  else back.classList.add('visible');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function goBack() { const prev = navHistory.pop() || 'home'; showPage(prev); }
+
+function setPill(type, val, el) {
+  const map   = { rating: 'f_rating', exp: 'f_experience', eventStatus: 'f_eventStatus' };
+  const grpMap = { rating: 'pg_rating', exp: 'pg_exp', eventStatus: 'pg_eventStatus' };
+  document.getElementById(map[type]).value = val;
+  document.getElementById(grpMap[type]).querySelectorAll('.pill').forEach(p => p.className = 'pill');
+  if (type === 'rating') el.classList.add('sel-blue');
+  else if (type === 'exp') el.classList.add('sel-green');
+  else if (type === 'eventStatus') el.classList.add(val === 'Won' ? 'sel-gold' : 'sel-blue');
 }
 </script>
 </body>
